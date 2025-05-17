@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# Simple POS App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A lightweight Point of Sale (POS) application built with React for quick retail-style checkout. Great for hackathons, demos, or small store setups.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Product listing from JSON
+- Add/remove items to cart
+- Calculates total
+- Sends total (in cents) to backend via API
+- Displays styled success/failure messages
 
-### `npm start`
+## Folder Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+simple-pos/
+├── public/
+│   └── index.html
+├── src/
+│   ├── data/
+│   │   └── products.json
+│   ├── App.js
+│   ├── App.css
+│   └── index.js
+├── package.json
+└── README.md
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## How to Run
 
-### `npm test`
+### 1. Install dependencies
+```bash
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2. Start the frontend (React app)
+```bash
+npm start
+```
+Opens at: `http://localhost:3000`
 
-### `npm run build`
+### 3. (Optional) Start mock backend server
+If using the mock API server:
+```bash
+node server.js
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Server will listen at: `http://localhost:4000/api/pay`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## API Contract
+POST `/api/pay`
+```json
+{
+  "amount": 1999
+}
+```
+Response:
+```json
+{
+  "message": "Payment of 1999 processed."
+}
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Notes
+- Total is sent as an integer (in cents)
+- All styling is minimal and functional
+- Built for speed and simplicity
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Feel free to fork, adapt, and build on top of this for more advanced features like barcode scanning, real payment integration, etc.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Happy Hacking! 🚀

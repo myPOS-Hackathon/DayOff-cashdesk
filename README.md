@@ -1,4 +1,4 @@
-# Simple POS App
+# Secure POS App
 
 A lightweight Point of Sale (POS) application built with React for quick retail-style checkout. Great for hackathons, demos, or small store setups.
 

@@ -13,7 +13,7 @@ A lightweight Point of Sale (POS) application built with React for quick retail-
 ## Folder Structure
 
 ```
-simple-pos/
+secure-pos/
 ├── public/
 │   └── index.html
 ├── src/
@@ -38,28 +38,6 @@ npm install
 npm start
 ```
 Opens at: `http://localhost:3000`
-
-### 3. (Optional) Start mock backend server
-If using the mock API server:
-```bash
-node server.js
-```
-
-Server will listen at: `http://localhost:4000/api/pay`
-
-## API Contract
-POST `/api/pay`
-```json
-{
-  "amount": 1999
-}
-```
-Response:
-```json
-{
-  "message": "Payment of 1999 processed."
-}
-```
 
 ## Notes
 - Total is sent as an integer (in cents)
